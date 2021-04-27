@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_employeemanagementsystem" default="compile.module.employeemanagementsystem">
+  <dirname property="module.employeemanagementsystem.basedir" file="${ant.file.module_employeemanagementsystem}"/>
+  
+  <property name="module.jdk.home.employeemanagementsystem" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.employeemanagementsystem" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.employeemanagementsystem" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.employeemanagementsystem" value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="employeemanagementsystem.output.dir" value="${module.employeemanagementsystem.basedir}/target/classes"/>
+  <property name="employeemanagementsystem.testoutput.dir" value="${module.employeemanagementsystem.basedir}/target/test-classes"/>
+  
+  <path id="employeemanagementsystem.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="employeemanagementsystem.module.production.classpath">
+    <path refid="${module.jdk.classpath.employeemanagementsystem}"/>
+  </path>
+  
+  <path id="employeemanagementsystem.runtime.production.module.classpath">
+    <pathelement location="${employeemanagementsystem.output.dir}"/>
+  </path>
+  
+  <path id="employeemanagementsystem.module.classpath">
+    <path refid="${module.jdk.classpath.employeemanagementsystem}"/>
+    <pathelement location="${employeemanagementsystem.output.dir}"/>
+  </path>
+  
+  <path id="employeemanagementsystem.runtime.module.classpath">
+    <pathelement location="${employeemanagementsystem.testoutput.dir}"/>
+    <pathelement location="${employeemanagementsystem.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.employeemanagementsystem">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.employeemanagementsystem">
+    <patternset refid="excluded.from.module.employeemanagementsystem"/>
+  </patternset>
+  
+  <path id="employeemanagementsystem.module.sourcepath">
+    <dirset dir="${module.employeemanagementsystem.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="employeemanagementsystem.module.test.sourcepath">
+    <dirset dir="${module.employeemanagementsystem.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.employeemanagementsystem" depends="compile.module.employeemanagementsystem.production,compile.module.employeemanagementsystem.tests" description="Compile module EmployeeManagementSystem"/>
+  
+  <target name="compile.module.employeemanagementsystem.production" depends="register.custom.compilers" description="Compile module EmployeeManagementSystem; production classes">
+    <mkdir dir="${employeemanagementsystem.output.dir}"/>
+    <javac2 destdir="${employeemanagementsystem.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.employeemanagementsystem}/javac">
+      <compilerarg line="${compiler.args.employeemanagementsystem}"/>
+      <bootclasspath refid="employeemanagementsystem.module.bootclasspath"/>
+      <classpath refid="employeemanagementsystem.module.production.classpath"/>
+      <src refid="employeemanagementsystem.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.employeemanagementsystem"/>
+    </javac2>
+    
+    <copy todir="${employeemanagementsystem.output.dir}">
+      <fileset dir="${module.employeemanagementsystem.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.employeemanagementsystem.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.employeemanagementsystem.tests" depends="register.custom.compilers,compile.module.employeemanagementsystem.production" description="compile module EmployeeManagementSystem; test classes" unless="skip.tests">
+    <mkdir dir="${employeemanagementsystem.testoutput.dir}"/>
+    <javac2 destdir="${employeemanagementsystem.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.employeemanagementsystem}/javac">
+      <compilerarg line="${compiler.args.employeemanagementsystem}"/>
+      <bootclasspath refid="employeemanagementsystem.module.bootclasspath"/>
+      <classpath refid="employeemanagementsystem.module.classpath"/>
+      <src refid="employeemanagementsystem.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.employeemanagementsystem"/>
+    </javac2>
+    
+    <copy todir="${employeemanagementsystem.testoutput.dir}">
+      <fileset dir="${module.employeemanagementsystem.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.employeemanagementsystem" description="cleanup module">
+    <delete dir="${employeemanagementsystem.output.dir}"/>
+    <delete dir="${employeemanagementsystem.testoutput.dir}"/>
+  </target>
+</project>
