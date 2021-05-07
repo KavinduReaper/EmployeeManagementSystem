@@ -47,7 +47,7 @@ export class AddEmployeeComponent implements OnInit {
       res => {
         this.router.navigate(['view']);
       },
-      err =>{
+      err => {
         alert('An error occurred in Updating Employee');
       }
     );
@@ -62,7 +62,7 @@ export class AddEmployeeComponent implements OnInit {
   // CREATE NEW EMPLOYEE
   sendAdd(): void {
     // alert(this.model.dob);
-    if(this.employeeForm.valid){
+    if (this.employeeForm.valid){
       this.model.id = 0;
       this.model.name = this.employeeForm.value.name;
       this.model.dob = this.employeeForm.value.dob;

@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private BASE_URL = 'http://localhost:8080/';
+  private BASE_URL = 'http://localhost:8082/';
   private EMPLOYEE = `${this.BASE_URL}\\employee`;
 
 
