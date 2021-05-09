@@ -10,12 +10,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { NavigatorComponent } from './navigator/navigator.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { AddSkillsComponent } from './add-skills/add-skills.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEmployeeComponent,
-    NavigatorComponent
+    NavigatorComponent,
+    AddSkillsComponent
   ],
   imports: [
     BrowserModule,
