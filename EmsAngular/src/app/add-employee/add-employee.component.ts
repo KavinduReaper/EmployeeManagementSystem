@@ -51,13 +51,7 @@ export class AddEmployeeComponent implements OnInit {
         alert('An error occurred in Updating Employee');
       }
     );
-
-
   }
-
-
-
-
 
   // CREATE NEW EMPLOYEE
   sendAdd(): void {
