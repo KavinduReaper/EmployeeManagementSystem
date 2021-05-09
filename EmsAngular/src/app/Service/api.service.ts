@@ -10,8 +10,6 @@ export class ApiService {
   private BASE_URL = 'http://localhost:8082/';
   private EMPLOYEE = `${this.BASE_URL}\\employee`;
 
-
-
   constructor(private http: HttpClient) { }
 
   postEmployee(employee: Employee): Observable<any>{
