@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 id="addSkillTitle">Add Skills to a specific Employee...</h1>
+  <form [formGroup]="skillForm">
+<!--    <div class="form-group">-->
+<!--      <label for="InputID">Employee Id</label>-->
+<!--      <input type="number" class="form-control" id="InputID" formControlName="id" aria-describedby="emailHelp"-->
+<!--             placeholder="Enter ID" min="1" required="required">-->
+<!--      <small id="emailHelp" class="form-text text-muted">Choose ID, which relevant to the employee</small>-->
+<!--    </div>-->
+    <div class="form-group">
+      <label for="InputName">Employee Name</label>
+      <input type="text" class="form-control" id="InputName" formControlName="name" placeholder="Enter the name"
+             required="required">
+    </div>
+    <div class="form-group">
+      <label for="InputSkill">Employee Skill</label>
+      <input type="text" class="form-control" id="InputSkill" formControlName="skills" placeholder="Enter a skill"
+             required="required">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="employeeCheck" formControlName="check"
+      required="required">
+      <label class="form-check-label" for="employeeCheck">I'm already a employee</label>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="sendAddSkill()" [disabled]="skillForm.invalid">Submit</button>
+  </form>
+
+  <h1 id="deleteSkillTitle">Delete a skill of a Employee...</h1>
+
+</div>

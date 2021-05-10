@@ -1,5 +1,6 @@
 package com.employee.skillservice.service;
 
+import com.employee.skillservice.dataTransferObj.SkillDTO;
 import com.employee.skillservice.entity.Employee;
 import com.employee.skillservice.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,15 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
     }
 
-    public void saveOrUpdate(Employee employee){
-        employeeRepository.save(employee);
+    public boolean saveOrUpdate(SkillDTO skillDTO){
+        Employee employee = new Employee();
+        try{
+            employee.setName(skillDTO.getName());
+            employee.setSkills(skillDTO.getSkills());
+            employeeRepository.save(employee);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
     }
 }

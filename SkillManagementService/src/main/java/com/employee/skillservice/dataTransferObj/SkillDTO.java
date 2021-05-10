@@ -1,18 +1,11 @@
-package com.employee.skillservice.entity;
+package com.employee.skillservice.dataTransferObj;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "skills")
-public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column
+public class SkillDTO {
     private long id;
-    @Column
     private String name;
-    @Column
     private String skills;
+
+    SkillDTO(){};
 
     public long getId() {
         return id;
