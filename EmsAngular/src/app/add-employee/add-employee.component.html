@@ -1,8 +1,5 @@
-
-
-
 <div class="container">
-  <form [formGroup]="employeeForm"  >
+  <form [formGroup]="employeeForm">
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label >Name</label>
@@ -10,7 +7,6 @@
         <mat-error *ngIf="employeeForm.controls.name.errors?.required">Name is required</mat-error>
       </div>
     </div>
-
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label >Date of Birth</label>
@@ -18,38 +14,14 @@
         <mat-error *ngIf="employeeForm.controls.dob.errors?.required">Dob is required</mat-error>
       </div>
     </div>
-
-
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label >Email</label>
         <input type="Email" class="form-control" formControlName="email" matInput required email />
         <div *ngIf="employeeForm.controls.email.errors?.required">Email is required</div>
       </div>
-
     </div>
-
-    <button class="btn btn-success" [disabled]="!employeeForm.valid" *ngIf="btnvisibility" (click)="sendAdd()">Save</button>
-    <button class="btn btn-success" [disabled]="!employeeForm.valid" *ngIf="!btnvisibility" (click)="onUpdate()">Update</button>
-
-
-    <!--    <button class="btn btn-primary" type="submit" >Submit form</button>-->
+    <button class="btn btn-success" [disabled]="!employeeForm.valid" *ngIf="btnVisibility" (click)="sendAdd()">Save</button>
+    <button class="btn btn-success" [disabled]="!employeeForm.valid" *ngIf="!btnVisibility" (click)="onUpdate()">Update</button>
   </form>
 </div>
-
-
-<!--<div class="example-container">-->
-<!--  <mat-form-field>-->
-<!--    <input matInput placeholder="Input">-->
-<!--  </mat-form-field>-->
-
-<!--  <mat-form-field>-->
-<!--    <textarea matInput placeholder="Textarea"></textarea>-->
-<!--  </mat-form-field>-->
-
-<!--  <mat-form-field>-->
-<!--    <mat-select placeholder="Select">-->
-<!--      <mat-option value="option">Option</mat-option>-->
-<!--    </mat-select>-->
-<!--  </mat-form-field>-->
-<!--</div>-->

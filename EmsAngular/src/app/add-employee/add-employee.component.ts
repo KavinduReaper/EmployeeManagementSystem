@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Employee} from '../Model/employee';
 import {ApiService} from '../Service/api.service';
 import {Router} from '@angular/router';
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {ObserversModule} from '@angular/cdk/observers';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-add-employee',
@@ -11,29 +10,19 @@ import {ObserversModule} from '@angular/cdk/observers';
   styleUrls: ['./add-employee.component.css']
 })
 
-// tslint:disable-next-line:align
-
-
-
-
 export class AddEmployeeComponent implements OnInit {
 
-  skillsArr: number[] =[];
+  skillsArr: number[] = [];
   skillTemp: string[] = [];
   mapSkill = new Map();
-  frmSubmit = false;
-  btnvisibility = true;
-
+  btnVisibility = true;
 
   model: Employee = new Employee();
-  emp: Employee;
-
   public employeeForm: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
     dob: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required)
   });
-
 
   constructor(private  apiService: ApiService, private router: Router) { }
 
@@ -41,28 +30,21 @@ export class AddEmployeeComponent implements OnInit {
 
   }
 
-
   onUpdate(): void{
     this.apiService.updateEmployee(this.model, this.model.id).subscribe(
       res => {
         this.router.navigate(['view']);
       },
-      err =>{
+      err => {
         alert('An error occurred in Updating Employee');
       }
     );
-
-
   }
-
-
-
-
 
   // CREATE NEW EMPLOYEE
   sendAdd(): void {
     // alert(this.model.dob);
-    if(this.employeeForm.valid){
+    if (this.employeeForm.valid){
       this.model.id = 0;
       this.model.name = this.employeeForm.value.name;
       this.model.dob = this.employeeForm.value.dob;
