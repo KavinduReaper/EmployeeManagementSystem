@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Employee} from '../Model/employee';
 import {Observable} from 'rxjs';
 import {AddSkill} from '../Model/addSkill';
+import {Report} from '../Model/report';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,8 @@ export class ApiService {
   private EMPLOYEE = `${this.BASE_URL}\\employee`;
   private SKILL_URL = 'http://localhost:8083/';
   private SKILLS = `${this.SKILL_URL}\\skills`;
+  private REPORT_URL = 'http://localhost:8084/';
+  private REPORT = `${this.REPORT_URL}\\report`;
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +32,9 @@ export class ApiService {
 
   postSkill(addSkill: AddSkill): Observable<any>{
     return this.http.post(this.SKILLS, addSkill);
+  }
+  getReport(): Observable<Report[]>{
+    return this.http.get<Report[]>(this.REPORT);
   }
 
 }

@@ -11,13 +11,15 @@ import { NavigatorComponent } from './navigator/navigator.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AddSkillsComponent } from './add-skills/add-skills.component';
+import { ReportViewComponent } from './report-view/report-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEmployeeComponent,
     NavigatorComponent,
-    AddSkillsComponent
+    AddSkillsComponent,
+    ReportViewComponent
   ],
   imports: [
     BrowserModule,

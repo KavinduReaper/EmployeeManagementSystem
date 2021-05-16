@@ -5,6 +5,8 @@ import com.employee.employeeservice.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value="/employee")
 public class EmployeeController {
@@ -13,8 +15,9 @@ public class EmployeeController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "",method = RequestMethod.GET)
-    public void getAll(){
-        System.out.println("Yes");
+    public List<EmployeeDTO> getAll(){
+
+        return employeeService.getAllEmployee();
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
