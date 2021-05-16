@@ -21,4 +21,10 @@ public class EmployeeServiceApplication {
         return Server.createTcpServer(
                 "-tcp", "-tcpAllowOthers", "-tcpPort", "9090");
     }
+    //     Skill Microservice
+    @Bean(initMethod = "start", destroyMethod = "stop")
+    public Server inMemoryH2DatabaseServer2() throws SQLException {
+        return Server.createTcpServer(
+                "-tcp", "-tcpAllowOthers", "-tcpPort", "9091");
+    }
 }

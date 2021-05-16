@@ -6,6 +6,9 @@ import com.employee.employeeservice.repository.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class EmployeeService {
     @Autowired
@@ -22,6 +25,12 @@ public class EmployeeService {
         }catch (Exception e){
             return false;
         }
+    }
+
+    public List<EmployeeDTO> getAllEmployee(){
+        List<EmployeeDTO> employeeDTO = new ArrayList<EmployeeDTO>();
+
+        return employeeDTO;
     }
 
 }
