@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class LoginService {
-    public LoginDTO checklogin() {
-        LoginDTO loginDTO = new LoginDTO();
-        return loginDTO;
-    }
+//    public LoginDTO checklogin() {
+//        LoginDTO loginDTO = new LoginDTO();
+//        return loginDTO;
+//    }
 }

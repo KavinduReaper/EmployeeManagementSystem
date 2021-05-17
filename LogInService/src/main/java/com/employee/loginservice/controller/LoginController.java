@@ -16,12 +16,12 @@ public class LoginController {
     @Autowired
     LoginService loginService;
 
-    @CrossOrigin(origins = "http://localhost:4200")
-    @RequestMapping(value = "",method = RequestMethod.GET)
-    public LoginDTO Check(){
-
-        return loginService.checklogin();
-    }
+//    @CrossOrigin(origins = "http://localhost:4200")
+//    @RequestMapping(value = "",method = RequestMethod.GET)
+//    public LoginDTO Check(){
+//
+//        return loginService.checklogin();
+//    }
 
 
 }
