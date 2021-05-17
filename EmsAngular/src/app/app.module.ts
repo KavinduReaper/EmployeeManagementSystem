@@ -12,6 +12,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AddSkillsComponent } from './add-skills/add-skills.component';
 import { ReportViewComponent } from './report-view/report-view.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReportViewComponent } from './report-view/report-view.component';
     AddEmployeeComponent,
     NavigatorComponent,
     AddSkillsComponent,
-    ReportViewComponent
+    ReportViewComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

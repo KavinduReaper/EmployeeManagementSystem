@@ -1,0 +1,6 @@
+li a{
+  color: white;
+}
+a:hover{
+  background-color: #999999;
+}
