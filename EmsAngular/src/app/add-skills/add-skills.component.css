@@ -1,11 +1,9 @@
 #addSkillTitle{
-  color: aqua;
-  font-family: "Arial Black";
   font-style: italic;
+  text-align: center;
 }
 
 #deleteSkillTitle{
-  color: aqua;
-  font-family: "Arial Black";
   font-style: italic;
+  text-align: center;
 }
