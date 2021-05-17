@@ -2,55 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="087249a6-b4d2-4918-b937-f6c56a2983d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/EmployeeManagementSystem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmployeeManagementSystem/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmployeeManagementSystem/employeemanagementsystem.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmployeeManagementSystem/employeemanagementsystem.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmployeeManagementSystem/module_employeemanagementsystem.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmployeeManagementSystem/src/main/java/EmployeeManagementSystem/controller/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmployeeManagementSystem/src/main/java/EmployeeManagementSystem/service/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/.browserslistrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/e2e/protractor.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/e2e/src/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/e2e/src/app.po.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/e2e/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/app/app-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/app/app.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/app/app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/environments/environment.prod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/polyfills.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/src/test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/tsconfig.spec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmsAngular/tslint.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmployeeManagementSystem/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeeManagementSystem/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmployeeManagementSystem/EmployeeManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeeManagementSystem/EmployeeManagementSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmployeeManagementSystem/src/main/java/EmployeeManagementSystem/dto/employeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeeManagementSystem/src/main/java/EmployeeManagementSystem/dto/EmployeeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmployeeManagementSystem/src/main/java/EmployeeManagementSystem/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeeManagementSystem/src/main/java/EmployeeManagementSystem/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmployeeManagementSystem/src/main/java/EmployeeManagementSystem/repository/employeerepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeeManagementSystem/src/main/java/EmployeeManagementSystem/repository/EmployeeRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmployeeManagementSystem/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeeManagementSystem/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,17 +15,17 @@
   <component name="ProjectId" id="1rhMPrHcaEEgyIA8RqLGiTkD7AB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/EmployeeManagementSystem" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -84,6 +36,17 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Spring Boot.EmployeeManagementSystem">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E2E Tests (EmsAngular)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/EmsAngular/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -120,6 +83,7 @@
       <item itemvalue="Spring Boot.EmployeeManagementSystem" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -131,64 +95,11 @@
       <option name="presentableId" value="Default" />
       <updated>1619423846474</updated>
       <workItem from="1619423850746" duration="1922000" />
+      <workItem from="1621161412469" duration="136000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="280" y="62" key="#Angular_CLI_Server" timestamp="1619424023607">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="280" y="62" key="#Angular_CLI_Server/0.0.1366.728@0.0.1366.728" timestamp="1619424023607" />
-    <state x="341" y="0" width="697" height="728" key="#EmployeeManagementSystem" timestamp="1619425440030">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="341" y="0" width="697" height="728" key="#EmployeeManagementSystem/0.0.1366.728@0.0.1366.728" timestamp="1619425440030" />
-    <state x="275" y="22" key="#TSLint" timestamp="1619424697557">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="22" key="#TSLint/0.0.1366.728@0.0.1366.728" timestamp="1619424697557" />
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619425766818">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1619425766818" />
-    <state x="412" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1619425765888">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="412" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1619425765888" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1619425096092">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1619425096092" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1619425773881">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619425773881" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1619425773881">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619425773881" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1619425773881">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619425773881" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1619425773881">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619425773881" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1619425631510">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1619425631510" />
-    <state x="400" y="172" key="jetbrains.nodejs.interpreters-dialog" timestamp="1619424446184">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="400" y="172" key="jetbrains.nodejs.interpreters-dialog/0.0.1366.728@0.0.1366.728" timestamp="1619424446184" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1619425623321">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1619425623321" />
+    <option name="version" value="3" />
   </component>
 </project>
