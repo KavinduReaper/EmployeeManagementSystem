@@ -14,14 +14,26 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @RequestMapping(value = "/getAll",method = RequestMethod.GET)
-    public List<EmployeeDTO> getAll(){
-        return employeeService.getAllEmployee();
+    @RequestMapping(value = "",method = RequestMethod.GET)
+    public List<EmployeeDTO> GetAllEmployee(){
+        return employeeService.GetAllEmployee();
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value="",method = RequestMethod.POST)
-    public boolean addEmployee(@RequestBody EmployeeDTO employeeDTO){
-        return employeeService.addEmployee(employeeDTO);
+    public boolean AddEmployee(@RequestBody EmployeeDTO employeeDTO){
+        return employeeService.AddEmployee(employeeDTO);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping(value="",method = RequestMethod.PUT)
+    public List<EmployeeDTO> UpdateEmployee(@RequestBody EmployeeDTO employeeDTO) throws Exception {
+        return employeeService.UpdateEmployee(employeeDTO);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping(value="/{id}",method = RequestMethod.DELETE)
+    public Boolean DeleteEmployee( @PathVariable long id){
+        return employeeService.DeleteEmployee(id);
     }
 }

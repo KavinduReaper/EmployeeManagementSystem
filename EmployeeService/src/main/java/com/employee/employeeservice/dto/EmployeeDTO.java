@@ -6,7 +6,14 @@ public class EmployeeDTO {
     private String email;
     private String dob;
 
-    EmployeeDTO(){}
+    public EmployeeDTO(){}
+
+    public EmployeeDTO(long id, String name, String email, String dob) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.dob = dob;
+    }
 
     public long getId() {
         return id;

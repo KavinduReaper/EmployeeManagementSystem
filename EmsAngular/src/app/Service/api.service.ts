@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Employee} from '../Model/employee';
-import {Observable, Subject} from 'rxjs';
-import { map } from 'rxjs/operators';
-import {Skill} from '../Model/Skill';
+import {Observable} from 'rxjs';
+import {AddSkill} from '../Model/addSkill';
 import {Report} from '../Model/report';
 
 @Injectable({
@@ -11,7 +10,7 @@ import {Report} from '../Model/report';
 })
 export class ApiService {
   private BASE_URL = 'http://localhost:8082/';
-  private EMPLOYEE = `${this.BASE_URL}\\employee`;
+  private EMPLOYEE = `${this.BASE_URL}\\employee\\`;
   private SKILL_URL = 'http://localhost:8083/';
   private SKILLS = `${this.SKILL_URL}\\skills`;
   private REPORT_URL = 'http://localhost:8084/';
@@ -19,36 +18,29 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  /*** Habala's functions ***/
   postEmployee(employee: Employee): Observable<any>{
     return this.http.post(this.EMPLOYEE, employee);
   }
 
   getAllEmployee(): Observable<Employee[]>{
-    return this.http.get<Employee []>(this.EMPLOYEE);
+    return this.http.get<Employee[]>(this.EMPLOYEE);
   }
 
-  updateEmployee(employee: Employee, employeeId: number): Observable<any>{
-    return this.http.put(this.EMPLOYEE + employeeId, employee);
-  }
-  /*** Plaster's functions ***/
-  postSkill(skill: Skill): Observable<any>{
-    return this.http.post(this.SKILLS, skill);
+  updateEmployee(employee: Employee): Observable<any>{
+    return this.http.put(this.EMPLOYEE, employee);
   }
 
-  saveOrUpdateSkill(skill: Skill, skillId: number): Observable<any>{
-    return this.http.put(this.SKILLS + skillId, skill);
+  deleteEmployee(id: number): Observable<any>{
+    return this.http.delete(this.EMPLOYEE + id);
   }
 
-  skillList(): Observable<Skill[]> {
-    console.log(this.http.get(this.SKILLS).pipe(map(res => res as Skill[])));
-    return this.http.get(this.SKILLS).pipe(map(res => res as Skill[]));
+  postSkill(addSkill: AddSkill): Observable<any>{
+    return this.http.post(this.SKILLS, addSkill);
   }
-
-  /*** Thiwa's Functions ***/
   getReport(): Observable<Report[]>{
     return this.http.get<Report[]>(this.REPORT);
   }
 
-  /*** Baruwa's functions ***/
+
+
 }
