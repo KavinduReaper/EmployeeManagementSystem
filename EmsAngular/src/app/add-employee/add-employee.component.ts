@@ -3,6 +3,8 @@ import {Employee} from '../Model/employee';
 import {ApiService} from '../Service/api.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ViewEmployeeComponent} from '../view-employee/view-employee.component';
+
 
 @Component({
   selector: 'app-add-employee',
@@ -64,11 +66,10 @@ export class AddEmployeeComponent implements OnInit {
       this.model.name = this.employeeForm.value.name;
       this.model.dob = this.employeeForm.value.dob;
       this.model.email = this.employeeForm.value.email;
-      console.log('dhfs');
+
       this.apiService.postEmployee(this.model).subscribe(
         res => {
-          console.log(res);
-          location.reload();
+          this.router.navigate(['view-employee']);
         },
         err => {
           alert('An error in Adding Employee');
