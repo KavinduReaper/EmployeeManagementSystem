@@ -22,13 +22,13 @@ public class EmployeeController {
 //    }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     private Employee getEmployee(@PathVariable Long id){
         return employeeService.getEmployeeById(id);
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @RequestMapping(value = "", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     private void deleteEmployee(@PathVariable Long id){
         employeeService.delete(id);
     }

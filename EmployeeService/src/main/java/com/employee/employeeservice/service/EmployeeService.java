@@ -28,8 +28,7 @@ public class EmployeeService {
     }
 
     public List<EmployeeDTO> getAllEmployee(){
-        List<EmployeeDTO> employeeDTO = new ArrayList<EmployeeDTO>();
-
+        List<EmployeeDTO> employeeDTO = new ArrayList<>();
         return employeeDTO;
     }
 
