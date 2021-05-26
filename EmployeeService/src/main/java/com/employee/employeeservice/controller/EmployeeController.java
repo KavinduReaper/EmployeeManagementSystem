@@ -14,9 +14,8 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @RequestMapping(value = "",method = RequestMethod.GET)
+    @RequestMapping(value = "/getAll",method = RequestMethod.GET)
     public List<EmployeeDTO> getAll(){
-
         return employeeService.getAllEmployee();
     }
 

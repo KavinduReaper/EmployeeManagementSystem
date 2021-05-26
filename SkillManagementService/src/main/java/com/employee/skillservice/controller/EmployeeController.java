@@ -14,24 +14,23 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    private List<Employee> getAllSkills(){
+        return employeeService.getAllSkills();
+    }
+
 //    @CrossOrigin(origins = "http://localhost:4200")
-////    @GetMapping("/employees")
-//    @RequestMapping(value = "", method = RequestMethod.GET)
-//    private List<Employee> getAllEmployees(){
-//        return employeeService.getAllEmployees();
+//    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+//    private Employee getEmployee(@PathVariable Long id){
+//        return employeeService.getEmployeeById(id);
 //    }
-
-    @CrossOrigin(origins = "http://localhost:4200")
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
-    private Employee getEmployee(@PathVariable Long id){
-        return employeeService.getEmployeeById(id);
-    }
-
-    @CrossOrigin(origins = "http://localhost:4200")
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    private void deleteEmployee(@PathVariable Long id){
-        employeeService.delete(id);
-    }
+//
+//    @CrossOrigin(origins = "http://localhost:4200")
+//    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+//    private void deleteEmployee(@PathVariable Long id){
+//        employeeService.delete(id);
+//    }
 
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "", method = RequestMethod.POST)

@@ -1,30 +1,40 @@
 <div class="container">
   <h1 id="addSkillTitle">Add Skills...</h1>
   <form [formGroup]="skillForm">
-<!--    <div class="form-group">-->
-<!--      <label for="InputID">Employee Id</label>-->
-<!--      <input type="number" class="form-control" id="InputID" formControlName="id" aria-describedby="emailHelp"-->
-<!--             placeholder="Enter ID" min="1" required="required">-->
-<!--      <small id="emailHelp" class="form-text text-muted">Choose ID, which relevant to the employee</small>-->
-<!--    </div>-->
-    <div class="form-group">
-      <label for="InputName">Employee Name</label>
-      <input type="text" class="form-control" id="InputName" formControlName="name" placeholder="Enter the name"
-             required="required">
-    </div>
     <div class="form-group">
       <label for="InputSkill">Employee Skill</label>
       <input type="text" class="form-control" id="InputSkill" formControlName="skills" placeholder="Enter a skill"
              required="required">
     </div>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="employeeCheck" formControlName="check"
-      required="required">
-      <label class="form-check-label" for="employeeCheck">I'm already a employee</label>
-    </div>
     <button type="submit" class="btn btn-primary" (click)="sendAddSkill()" [disabled]="skillForm.invalid">Submit</button>
   </form>
-
-<!--  <h1 id="deleteSkillTitle">Delete a skill of a Employee...</h1>-->
-
+  <h1 id="skillTable">Already Exist Skills...</h1>
+  <h6 class="pb-2 mb-0">Employees</h6>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Skill Name</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+<!--    <tbody>-->
+<!--    <tr *ngFor="let employee of employees">-->
+<!--      <td>-->
+<!--        <span *ngIf="employee.new" class="badge badge-primary">new</span>-->
+<!--        {{employee.name}}-->
+<!--      </td>-->
+<!--      <td>{{employee.position}}</td>-->
+<!--      <td>{{employee.salary}}</td>-->
+<!--      <td>{{employee.createdAt | date:'yyyy/MM/dd'}}</td>-->
+<!--      <td>-->
+<!--        <button (click)="delete(employee)" class="btn btn-danger btn-sm">-->
+<!--          <span class="oi oi-trash"></span>-->
+<!--        </button>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr *ngIf="loading">-->
+<!--      <td colspan="5" align="center">Fetching Employees</td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+  </table>
 </div>

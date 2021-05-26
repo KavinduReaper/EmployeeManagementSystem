@@ -26,9 +26,7 @@ export class AddEmployeeComponent implements OnInit {
 
   constructor(private  apiService: ApiService, private router: Router) { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   onUpdate(): void{
     this.apiService.updateEmployee(this.model, this.model.id).subscribe(
