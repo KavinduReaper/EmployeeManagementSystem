@@ -32,8 +32,8 @@ public class EmployeeController {
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @RequestMapping(value="",method = RequestMethod.DELETE)
-    public Boolean DeleteEmployee(@RequestBody Long id){
+    @RequestMapping(value="/{id}",method = RequestMethod.DELETE)
+    public Boolean DeleteEmployee( @PathVariable long id){
         return employeeService.DeleteEmployee(id);
     }
 }

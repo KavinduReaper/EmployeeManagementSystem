@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Employee} from '../Model/employee';
 import {ApiService} from '../Service/api.service';
 import {Router} from '@angular/router';
@@ -16,6 +16,9 @@ export class AddEmployeeComponent implements OnInit {
   skillTemp: string[] = [];
   mapSkill = new Map();
   btnVisibility = true;
+  edit = false;
+  @Input() employee: Employee;
+  @Output() backToView: EventEmitter<any> = new EventEmitter();
 
   model: Employee = new Employee();
   public employeeForm: FormGroup = new FormGroup({
@@ -28,12 +31,24 @@ export class AddEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    if (this.employee != null){
+      this.edit = true;
+      this.employeeForm.controls.name.setValue(this.employee.name);
+      this.employeeForm.controls.email.setValue(this.employee.email);
+      this.employeeForm.controls.dob.setValue(this.employee.dob);
+    }
+
   }
 
   onUpdate(): void{
-    this.apiService.updateEmployee(this.model, this.model.id).subscribe(
+    this.model.id = this.employee.id;
+    this.model.name = this.employeeForm.value.name;
+    this.model.dob = this.employeeForm.value.dob;
+    this.model.email = this.employeeForm.value.email;
+
+    this.apiService.updateEmployee(this.model).subscribe(
       res => {
-        this.router.navigate(['view']);
+        this.backToView.emit();
       },
       err => {
         alert('An error occurred in Updating Employee');
@@ -63,4 +78,7 @@ export class AddEmployeeComponent implements OnInit {
   }
 
 
+  cancel(): void {
+    this.backToView.emit();
   }
+}

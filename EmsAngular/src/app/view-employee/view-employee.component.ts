@@ -10,6 +10,8 @@ import {Employee} from '../Model/employee';
 export class ViewEmployeeComponent implements OnInit {
 
   employees: Employee[];
+  edit = false;
+  employee: Employee;
 
   constructor(private apiService: ApiService) { }
 
@@ -27,11 +29,31 @@ export class ViewEmployeeComponent implements OnInit {
     );
   }
 
+  // tslint:disable-next-line:typedef
   editEmp(emp: Employee) {
-    
+    this.employee = emp;
+    this.edit = true;
   }
 
+  // tslint:disable-next-line:typedef
   deleteEmployee(id: number) {
-    
+    this.apiService.deleteEmployee(id).subscribe(
+      res => {
+        if (res){
+          alert('Delete Successfully');
+        }else{
+          alert('Error in Delete');
+        }
+      }, error => {
+        alert('Error in Server');
+      }
+    );
+  }
+
+
+  // tslint:disable-next-line:typedef
+  backToView($event: any) {
+    this.edit = false;
+    this.ngOnInit();
   }
 }
