@@ -3,8 +3,6 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Skill} from '../Model/Skill';
 import {ApiService} from '../Service/api.service';
 import {Router} from '@angular/router';
-import {Observable} from 'rxjs';
-import {Employee} from '../Model/employee';
 
 @Component({
   selector: 'app-add-skills',
@@ -21,7 +19,7 @@ export class AddSkillsComponent implements OnInit {
 
   constructor(private  apiService: ApiService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getAllSkills();
   }
 

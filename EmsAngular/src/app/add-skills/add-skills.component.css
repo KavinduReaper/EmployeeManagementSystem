@@ -1,6 +1,9 @@
 #addSkillTitle{
+  padding: 20px;
   font-style: italic;
   text-align: center;
+  background-color: #0e9271;
+  color: white;
 }
 
 #deleteSkillTitle{
@@ -9,6 +12,17 @@
 }
 
 #skillTable{
+  padding: 20px;
   font-style: italic;
   text-align: center;
+  background-color: #0e9271;
+  color: white;
+}
+
+#skillListHeader{
+  padding: 20px;
+}
+
+#skillHeader{
+  padding: 20px;
 }

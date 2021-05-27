@@ -1,5 +1,7 @@
 <div class="container">
-  <h1 id="addSkillTitle">Add Skills...</h1>
+  <div id="skillHeader">
+    <h1 id="addSkillTitle">Add Skills...</h1>
+  </div>
   <form [formGroup]="skillForm">
     <div class="form-group">
       <label for="InputSkill">Employee Skill</label>
@@ -8,8 +10,9 @@
     </div>
     <button type="submit" class="btn btn-primary" (click)="sendAddSkill()" [disabled]="skillForm.invalid">Add</button>
   </form>
-  <h1 id="skillTable">Already Exist Skills...</h1>
-  <h6 class="pb-2 mb-0">Employees</h6>
+  <div id="skillListHeader">
+    <h1 id="skillTable">List of Skills</h1>
+  </div>
   <table class="table">
     <thead>
     <tr>
@@ -33,3 +36,4 @@
     </tr>
     </tbody>
   </table>
+</div>
