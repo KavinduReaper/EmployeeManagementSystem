@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import { AddSkillsComponent } from './add-skills/add-skills.component';
 import { ReportViewComponent } from './report-view/report-view.component';
 import { HomeComponent } from './home/home.component';
+import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     NavigatorComponent,
     AddSkillsComponent,
     ReportViewComponent,
-    HomeComponent
+    HomeComponent,
+    ViewEmployeeComponent
   ],
   imports: [
     BrowserModule,

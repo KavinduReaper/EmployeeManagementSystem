@@ -10,7 +10,7 @@ import {Report} from '../Model/report';
 })
 export class ApiService {
   private BASE_URL = 'http://localhost:8082/';
-  private EMPLOYEE = `${this.BASE_URL}\\employee`;
+  private EMPLOYEE = `${this.BASE_URL}\\employee\\`;
   private SKILL_URL = 'http://localhost:8083/';
   private SKILLS = `${this.SKILL_URL}\\skills`;
   private REPORT_URL = 'http://localhost:8084/';
@@ -26,8 +26,12 @@ export class ApiService {
     return this.http.get<Employee[]>(this.EMPLOYEE);
   }
 
-  updateEmployee(employee: Employee, employeeId: number): Observable<any>{
-    return this.http.put(this.EMPLOYEE + employeeId, employee);
+  updateEmployee(employee: Employee): Observable<any>{
+    return this.http.put(this.EMPLOYEE, employee);
+  }
+
+  deleteEmployee(id: number): Observable<any>{
+    return this.http.delete(this.EMPLOYEE + id);
   }
 
   postSkill(addSkill: AddSkill): Observable<any>{
@@ -36,5 +40,7 @@ export class ApiService {
   getReport(): Observable<Report[]>{
     return this.http.get<Report[]>(this.REPORT);
   }
+
+
 
 }

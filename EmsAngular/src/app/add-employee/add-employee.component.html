@@ -21,7 +21,8 @@
         <div *ngIf="employeeForm.controls.email.errors?.required">Email is required</div>
       </div>
     </div>
-    <button class="btn btn-success" [disabled]="!employeeForm.valid" *ngIf="btnVisibility" (click)="sendAdd()">Save</button>
-    <button class="btn btn-success" [disabled]="!employeeForm.valid" *ngIf="!btnVisibility" (click)="onUpdate()">Update</button>
+    <button class="btn btn-success" [disabled]="!employeeForm.valid" *ngIf="!edit" (click)="sendAdd()">Save</button>
+    <button class="btn btn-success" [disabled]="!employeeForm.valid" *ngIf="edit" (click)="onUpdate()">Update</button>
+    <button class="btn btn-danger" *ngIf="edit" (click)="cancel()">Cancel</button>
   </form>
 </div>
