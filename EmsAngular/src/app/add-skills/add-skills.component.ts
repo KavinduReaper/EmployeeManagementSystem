@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Skill} from '../Model/Skill';
 import {ApiService} from '../Service/api.service';
 import {Router} from '@angular/router';
+import {Employee} from "../Model/employee";
 
 @Component({
   selector: 'app-add-skills',
@@ -11,7 +12,12 @@ import {Router} from '@angular/router';
 })
 export class AddSkillsComponent implements OnInit {
   model: Skill = new Skill();
+  model1: Skill = new Skill();
   allSkills: Skill[];
+
+  edit = false;
+  @Input() skill: Skill;
+  @Output() backToView: EventEmitter<any> = new EventEmitter();
 
   public skillForm: FormGroup = new FormGroup({
     skills: new FormControl('', Validators.required)
@@ -21,6 +27,10 @@ export class AddSkillsComponent implements OnInit {
 
   ngOnInit() {
     this.getAllSkills();
+    if (this.skill != null){
+      this.edit = true;
+      this.skillForm.controls.skills.setValue(this.skill.skills);
+    }
   }
 
   // tslint:disable-next-line:typedef
@@ -50,20 +60,27 @@ export class AddSkillsComponent implements OnInit {
     );
   }
 
-  // tslint:disable-next-line:typedef
-  updateSkill(skill: Skill){
-    this.apiService.updateSkill(skill).subscribe(
+  onUpdate(): void{
+    this.model1.id = this.skillForm.value.id;
+    this.model1.skills = this.skillForm.value.skills;
+    this.apiService.updateSkill(this.model1).subscribe(
       res => {
-        if (res){
-          alert('alert 1');
-        }
-        else{
-          alert('alert2');
-        }
-      }, error => {
-        alert('Error in Server');
+        this.edit = false;
+      },
+      err => {
+        alert('An error occurred in Updating Skill');
       }
     );
+  }
+
+  cancel(): void {
+    this.edit = false;
+    this.skillForm.reset();
+  }
+
+  editSkill(skill: Skill) {
+    this.skill = skill;
+    this.edit = true;
   }
 
   sendAddSkill(): void{

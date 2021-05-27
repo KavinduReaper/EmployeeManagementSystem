@@ -44,7 +44,6 @@ export class ViewEmployeeComponent implements OnInit {
           style: 'header'
         },
         this.getExperienceObject(this.employees)
-
       ],
       styles: {
         header: {
