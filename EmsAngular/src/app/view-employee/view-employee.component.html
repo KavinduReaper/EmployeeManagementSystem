@@ -1,4 +1,9 @@
 <div *ngIf="!edit">
+  <div class="text-right" >
+    <button type="button" class="btn btn-success mx-3 my-3" (click)="generatePdf()">Generate PDF</button>
+  </div>
+</div>
+<div *ngIf="!edit">
 <table class="table">
   <thead >
   <tr>
@@ -39,3 +44,5 @@
   <app-add-employee [employee]="this.employee" (backToView)="backToView($event)">
   </app-add-employee>
 </div>
+
+
