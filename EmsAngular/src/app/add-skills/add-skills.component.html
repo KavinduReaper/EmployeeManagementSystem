@@ -1,29 +1,34 @@
 <div class="container">
-  <div id="skillHeader">
-    <h1 id="addSkillTitle">Add Skills...</h1>
+  <div class="skillHeader">
+    <h1 class="addSkillTitle">Add Skills...</h1>
   </div>
   <form [formGroup]="skillForm">
     <div class="form-group">
-      <label for="InputSkill">Employee Skill</label>
+      <label for="InputSkill">Skill Name</label>
       <input type="text" class="form-control" id="InputSkill" formControlName="skills" placeholder="Enter a skill"
              required="required">
     </div>
-    <button type="submit" class="btn btn-primary" (click)="sendAddSkill()" [disabled]="skillForm.invalid">Add</button>
+    <button type="submit" class="btn btn-primary" *ngIf="!edit" (click)="sendAddSkill()" [disabled]="skillForm.invalid">Add</button>
+    <button type="submit" class="btn btn-danger"  *ngIf="edit" (click)="cancel()" [disabled]="skillForm.invalid">Cancel</button>
+    <button type="submit" class="btn btn-success" *ngIf="edit" (click)="onUpdate()" [disabled]="skillForm.invalid">Update</button>
   </form>
-  <div id="skillListHeader">
-    <h1 id="skillTable">List of Skills</h1>
+  <div class="skillListHeader">
+    <h1 class="skillTable">List of Skills</h1>
   </div>
   <table class="table">
     <thead>
     <tr>
       <th scope="col">Skill Name</th>
       <th scope="col">Actions</th>
+      <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let skill of allSkills; index as i">
       <td> {{skill.skills}} </td>
-
+      <td>
+        <button class="btn btn-primary btn-sm" (click)="editSkill(skill)"> Edit </button>
+      </td>
       <td>
         <button (click)="deleteSkill(skill.id)" class="btn btn-danger btn-sm">
           <i class="bi bi-trash"> Delete </i>

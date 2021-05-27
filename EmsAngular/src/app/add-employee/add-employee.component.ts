@@ -13,11 +13,9 @@ import {ViewEmployeeComponent} from '../view-employee/view-employee.component';
 })
 
 export class AddEmployeeComponent implements OnInit {
-
   skillsArr: number[] = [];
   skillTemp: string[] = [];
   mapSkill = new Map();
-  btnVisibility = true;
   edit = false;
   @Input() employee: Employee;
   @Output() backToView: EventEmitter<any> = new EventEmitter();
@@ -32,14 +30,12 @@ export class AddEmployeeComponent implements OnInit {
   constructor(private  apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
-
     if (this.employee != null){
       this.edit = true;
       this.employeeForm.controls.name.setValue(this.employee.name);
       this.employeeForm.controls.email.setValue(this.employee.email);
       this.employeeForm.controls.dob.setValue(this.employee.dob);
     }
-
   }
 
   onUpdate(): void{
@@ -77,8 +73,6 @@ export class AddEmployeeComponent implements OnInit {
       );
     }
   }
-
-
   cancel(): void {
     this.backToView.emit();
   }
