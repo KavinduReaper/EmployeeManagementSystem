@@ -15,6 +15,9 @@ export class ApiService {
   private SKILLS = `${this.SKILL_URL}\\skills`;
   private REPORT_URL = 'http://localhost:8084/';
   private REPORT = `${this.REPORT_URL}\\report`;
+  private LOGIN_URL = 'http://localhost:8085/';
+  private LOGIN = `${this.LOGIN_URL}\\validate`;
+
 
   constructor(private http: HttpClient) { }
 
@@ -42,5 +45,7 @@ export class ApiService {
   }
 
 
-
+  login(value: any, value2: any): Observable<any> {
+    return this.http.get<any>(this.LOGIN);
+  }
 }

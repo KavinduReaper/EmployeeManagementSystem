@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="087249a6-b4d2-4918-b937-f6c56a2983d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmsAngular/src/app/Service/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/EmsAngular/src/app/Service/api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmsAngular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/EmsAngular/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmsAngular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/EmsAngular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmsAngular/src/app/navigator/navigator.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/EmsAngular/src/app/navigator/navigator.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,16 +33,19 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/EmsAngular/node_modules/protractor" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="ts.external.directory.path" value="C:\Users\buddh\Music\EmployeeNew\EmployeeManagementSystem\EmsAngular\node_modules\typescript\lib" />
   </component>
-  <component name="RunManager" selected="Spring Boot.EmployeeManagementSystem">
+  <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="E2E Tests (EmsAngular)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/EmsAngular/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/EmsAngular/node_modules/protractor" />
       <protractor-options value="" />
       <envs />
       <scope-kind value="ALL" />
@@ -61,7 +68,7 @@
       <scripts>
         <script value="start" />
       </scripts>
-      <node-interpreter value="C:/Program Files/nodejs/node" />
+      <node-interpreter value="$PROJECT_DIR$/../../../../../Program Files/nodejs/node" />
       <envs />
       <method v="2" />
     </configuration>
@@ -86,10 +93,25 @@
       <workItem from="1619423850746" duration="1922000" />
       <workItem from="1621161412469" duration="136000" />
       <workItem from="1621238317553" duration="4000" />
+      <workItem from="1622029052500" duration="11582000" />
+      <workItem from="1622084305127" duration="425000" />
+      <workItem from="1622093307824" duration="5523000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

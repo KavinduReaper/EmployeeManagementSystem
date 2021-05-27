@@ -14,6 +14,7 @@ import { AddSkillsComponent } from './add-skills/add-skills.component';
 import { ReportViewComponent } from './report-view/report-view.component';
 import { HomeComponent } from './home/home.component';
 import { ViewEmployeeComponent } from './view-employee/view-employee.component';
+import { LoginComponent } from './Login/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ViewEmployeeComponent } from './view-employee/view-employee.component';
     AddSkillsComponent,
     ReportViewComponent,
     HomeComponent,
-    ViewEmployeeComponent
+    ViewEmployeeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
