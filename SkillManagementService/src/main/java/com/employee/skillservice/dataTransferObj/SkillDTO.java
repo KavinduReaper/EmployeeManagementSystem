@@ -4,7 +4,10 @@ public class SkillDTO {
     private long id;
     private String skills;
 
-    SkillDTO(){};
+    public SkillDTO(long id, String skills) {
+        this.id = id;
+        this.skills = skills;
+    }
 
     public long getId() {
         return id;

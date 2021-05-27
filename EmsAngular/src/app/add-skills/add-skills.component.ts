@@ -13,7 +13,7 @@ import {Employee} from '../Model/employee';
 })
 export class AddSkillsComponent implements OnInit {
   model: Skill = new Skill();
-  allEmployeeDetails: Employee[];
+  allSkills: Skill[];
 
   public skillForm: FormGroup = new FormGroup({
     skills: new FormControl('', Validators.required)
@@ -21,7 +21,52 @@ export class AddSkillsComponent implements OnInit {
 
   constructor(private  apiService: ApiService, private router: Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.getAllSkills();
+  }
+
+  // tslint:disable-next-line:typedef
+  public getAllSkills(){
+    this.apiService.getAllSkills().subscribe(
+      res => {
+        this.allSkills = res;
+        console.log(this.allSkills);
+      }, error => {
+        alert('Error showing skills');
+      }
+    );
+  }
+
+  // tslint:disable-next-line:typedef
+  deleteSkill(id: number){
+    this.apiService.deleteSkill(id).subscribe(
+      res => {
+        if (!res){
+          location.reload();
+        }else{
+          alert('Delete not Succeed');
+        }
+      }, error => {
+        alert('Error in Server');
+      }
+    );
+  }
+
+  // tslint:disable-next-line:typedef
+  updateSkill(skill: Skill){
+    this.apiService.updateSkill(skill).subscribe(
+      res => {
+        if (res){
+          alert('alert 1');
+        }
+        else{
+          alert('alert2');
+        }
+      }, error => {
+        alert('Error in Server');
+      }
+    );
+  }
 
   sendAddSkill(): void{
     if (this.skillForm.valid){
@@ -36,7 +81,5 @@ export class AddSkillsComponent implements OnInit {
         }
       );
     }
-
   }
-
 }
