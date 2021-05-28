@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Employee} from '../Model/employee';
 import {Observable} from 'rxjs';
-import {AddSkill} from '../Model/addSkill';
+import {Skill} from '../Model/Skill';
 import {Report} from '../Model/report';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class ApiService {
   private BASE_URL = 'http://localhost:8082/';
   private EMPLOYEE = `${this.BASE_URL}\\employee\\`;
   private SKILL_URL = 'http://localhost:8083/';
-  private SKILLS = `${this.SKILL_URL}\\skills`;
+  private SKILLS = `${this.SKILL_URL}\\skills\\`;
   private REPORT_URL = 'http://localhost:8084/';
   private REPORT = `${this.REPORT_URL}\\report`;
   private LOGIN_URL = 'http://localhost:8085/';
@@ -21,6 +21,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  /*** Employee Service ***/
   postEmployee(employee: Employee): Observable<any>{
     return this.http.post(this.EMPLOYEE, employee);
   }
@@ -37,15 +38,36 @@ export class ApiService {
     return this.http.delete(this.EMPLOYEE + id);
   }
 
-  postSkill(addSkill: AddSkill): Observable<any>{
+  /*** Skill Service ***/
+  postSkill(addSkill: Skill): Observable<any>{
     return this.http.post(this.SKILLS, addSkill);
   }
-  getReport(): Observable<Report[]>{
-    return this.http.get<Report[]>(this.REPORT);
+
+  getAllSkills(): Observable<Skill[]>{
+    return this.http.get<Skill[]>(this.SKILLS);
+  }
+
+  deleteSkill(id: number): Observable<any>{
+    return this.http.delete(this.SKILLS + 'delete\\' + id);
   }
 
 
   login(value: any, value2: any): Observable<any> {
     return this.http.get<any>(this.LOGIN);
   }
+  
+  
+  
+
+  updateSkill(skill: Skill): Observable<any>{
+    return this.http.put(this.SKILLS, skill);
+  }
+
+  /*** Report Generation Service ***/
+  getReport(): Observable<Report[]>{
+    return this.http.get<Report[]>(this.REPORT);
+  }
+
+  
+
 }

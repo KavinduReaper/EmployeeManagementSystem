@@ -1,8 +1,8 @@
 package com.employee.skillservice.service;
 
 import com.employee.skillservice.dataTransferObj.SkillDTO;
-import com.employee.skillservice.entity.Employee;
-import com.employee.skillservice.repository.EmployeeRepository;
+import com.employee.skillservice.entity.Skill;
+import com.employee.skillservice.repository.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,31 +12,36 @@ import java.util.List;
 @Service
 public class EmployeeService {
     @Autowired
-    EmployeeRepository employeeRepository;
+    SkillRepository skillRepository;
 
-    public List<Employee> getAllEmployees(){
-        List<Employee> employees = new ArrayList<>();
-        employeeRepository.findAll().forEach(employees::add);
-        return employees;
+    public List<SkillDTO> getAllSkills(){
+        return mapToDTO((List<Skill>) skillRepository.findAll());
     }
 
-    public Employee getEmployeeById(long id){
-        return employeeRepository.findById(id).get();
-    }
+//    public Employee getEmployeeById(long id){
+//        return employeeRepository.findById(id).get();
+//    }
 
     public void delete(long id){
-        employeeRepository.deleteById(id);
+        skillRepository.deleteById(id);
     }
 
     public boolean saveOrUpdate(SkillDTO skillDTO){
-        Employee employee = new Employee();
+        Skill skill = new Skill();
         try{
-            employee.setName(skillDTO.getName());
-            employee.setSkills(skillDTO.getSkills());
-            employeeRepository.save(employee);
+            skill.setSkills(skillDTO.getSkills());
+            skillRepository.save(skill);
             return true;
         }catch (Exception e){
             return false;
         }
+    }
+
+    public List<SkillDTO> mapToDTO(List<Skill> skills){
+        List<SkillDTO> skillDTOS = new ArrayList<>();
+        for(Skill skill : skills){
+            skillDTOS.add(new SkillDTO(skill.getId(), skill.getSkills()));
+        }
+        return skillDTOS;
     }
 }
