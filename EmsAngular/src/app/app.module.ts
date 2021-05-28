@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { LoginComponent } from './login/login/login.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
