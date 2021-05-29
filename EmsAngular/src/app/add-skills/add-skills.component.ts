@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Skill} from '../Model/Skill';
 import {ApiService} from '../Service/api.service';
 import {Router} from '@angular/router';
-import {Observable} from 'rxjs';
 import {Employee} from '../Model/employee';
 
 @Component({
@@ -13,16 +12,30 @@ import {Employee} from '../Model/employee';
 })
 export class AddSkillsComponent implements OnInit {
   model: Skill = new Skill();
+  model1: Skill = new Skill();
   allSkills: Skill[];
+
+  edit = false;
+  @Input() skill: Skill;
+  @Output() backToView: EventEmitter<any> = new EventEmitter();
 
   public skillForm: FormGroup = new FormGroup({
     skills: new FormControl('', Validators.required)
   });
 
-  constructor(private  apiService: ApiService, private router: Router) { }
-
-  ngOnInit(): void {
+  constructor(private  apiService: ApiService, private router: Router) {
+    // tslint:disable-next-line:triple-equals
+    if ( localStorage.getItem('isLogin') == 'false' || localStorage.getItem('isLogin') == null) {
+      this.router.navigate(['login']);
+    }
+  }
+  // tslint:disable-next-line:typedef
+  ngOnInit() {
     this.getAllSkills();
+    if (this.skill != null){
+      this.edit = true;
+      this.skillForm.controls.skills.setValue(this.skill.skills);
+    }
   }
 
   // tslint:disable-next-line:typedef
@@ -52,20 +65,30 @@ export class AddSkillsComponent implements OnInit {
     );
   }
 
-  // tslint:disable-next-line:typedef
-  updateSkill(skill: Skill){
-    this.apiService.updateSkill(skill).subscribe(
+  onUpdate(): void{
+    this.model1.id = this.skill.id;
+    this.model1.skills = this.skillForm.value.skills;
+    this.apiService.updateSkill(this.model1).subscribe(
       res => {
-        if (res){
-          alert('alert 1');
-        }
-        else{
-          alert('alert2');
-        }
-      }, error => {
-        alert('Error in Server');
+        this.edit = false;
+        this.allSkills = res;
+        this.skillForm.controls.skills.setValue('');
+      },
+      err => {
+        alert('An error occurred in Updating Skill');
       }
     );
+  }
+
+  cancel(): void {
+    this.edit = false;
+    this.skillForm.reset();
+  }
+  // tslint:disable-next-line:typedef
+  editSkill(skill: Skill) {
+    this.skillForm.controls.skills.setValue(skill.skills);
+    this.skill = skill;
+    this.edit = true;
   }
 
   sendAddSkill(): void{
@@ -73,7 +96,7 @@ export class AddSkillsComponent implements OnInit {
       this.model.skills = this.skillForm.value.skills;
       console.log(this.model);
 
-      this.apiService.postSkill(this.model).subscribe(
+      this.apiService.saveSkill(this.model).subscribe(
         res => {
           location.reload();
         }, error => {

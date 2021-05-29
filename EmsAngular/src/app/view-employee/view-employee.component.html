@@ -25,11 +25,11 @@
     <td>{{emp.dob}}</td>
     <td>{{emp.email}}</td>
     <td >
-<!--      <table class="table table-nostriped" *ngFor="let ski of emp.skillId; ">-->
-<!--        <tr>-->
-<!--          <td>{{mapSkill.get(ski)}}</td>-->
-<!--        </tr>-->
-<!--      </table>-->
+      <table class="table table-nostriped" *ngFor="let ski of emp.skills; ">
+        <tr>
+          <td>{{mapSkill.get(ski)}}</td>
+        </tr>
+      </table>
 
     </td>
     <td><button (click)="editEmp(emp)"  type="button" class="btn btn-info">Update</button></td>

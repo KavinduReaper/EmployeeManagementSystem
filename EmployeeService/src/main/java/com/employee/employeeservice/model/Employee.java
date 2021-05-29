@@ -16,6 +16,9 @@ public class Employee {
     @Column
     private String dob;
 
+    @Column
+    private String skills;
+
     public Employee(){}
 
     public long getId() {
@@ -48,5 +51,13 @@ public class Employee {
 
     public void setDob(String dob) {
         this.dob = dob;
+    }
+
+    public String getSkills() {
+        return skills;
+    }
+
+    public void setSkills(String skills) {
+        this.skills = skills;
     }
 }

@@ -4,6 +4,7 @@ import {Employee} from '../Model/employee';
 import {Observable} from 'rxjs';
 import {Skill} from '../Model/Skill';
 import {Report} from '../Model/report';
+import {Login} from '../Model/login';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,9 @@ export class ApiService {
   private SKILLS = `${this.SKILL_URL}\\skills\\`;
   private REPORT_URL = 'http://localhost:8084/';
   private REPORT = `${this.REPORT_URL}\\report`;
+  private LOGIN_URL = 'http://localhost:8085/';
+  private LOGIN = `${this.LOGIN_URL}\\login\\`;
+
 
   constructor(private http: HttpClient) { }
 
@@ -48,8 +52,13 @@ export class ApiService {
     return this.http.delete(this.SKILLS + 'delete\\' + id);
   }
 
+
+  login(login: Login): Observable<any> {
+    return this.http.post<any>(this.LOGIN, login);
+  }
+
   updateSkill(skill: Skill): Observable<any>{
-    return this.http.put(this.SKILLS, skill);
+    return this.http.put<any>(this.SKILLS, skill);
   }
 
   /*** Report Generation Service ***/
@@ -57,5 +66,13 @@ export class ApiService {
     return this.http.get<Report[]>(this.REPORT);
   }
 
-  /*** Login Service ***/
+
+  register(login: Login): Observable<any> {
+    return this.http.post<any>(this.LOGIN + 'register', login);
+  }
+
+  // tslint:disable-next-line:typedef
+  saveSkill(model: Skill): Observable<any> {
+    return this.http.post<any>(this.SKILLS, model);
+  }
 }

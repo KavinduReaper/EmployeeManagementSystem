@@ -1,14 +1,34 @@
-#addSkillTitle{
+.addSkillTitle{
+  padding: 20px;
+  font-style: italic;
+  text-align: center;
+  background-color: #0e9271;
+  color: white;
+}
+
+.deleteSkillTitle{
   font-style: italic;
   text-align: center;
 }
 
-#deleteSkillTitle{
+.skillTable{
+  padding: 20px;
   font-style: italic;
   text-align: center;
+  background-color: #0e9271;
+  color: white;
 }
 
-#skillTable{
-  font-style: italic;
-  text-align: center;
+.skillListHeader{
+  padding: 20px;
 }
+
+.skillHeader{
+  padding: 20px;
+}
+
+.update{
+  margin-left: 5px;
+}
+
+
