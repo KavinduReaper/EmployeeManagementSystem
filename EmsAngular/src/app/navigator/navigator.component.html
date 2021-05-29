@@ -1,9 +1,9 @@
 <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand" href="/">EMP Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon" (click)="click()" ></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown" *ngIf="isSignIn">
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
       <li class="nav-item">
         <a class="nav-link" role="tab" aria-controls="pills-home" aria-selected="true" routerLink="add-employee">Add Employee</a>
@@ -12,11 +12,12 @@
         <a class="nav-link" role="tab" aria-controls="pills-profile" aria-selected="false" routerLink="view-employee">View Employee</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" role="tab" aria-controls="pills-contact" aria-selected="false" routerLink="login">Manage Skill</a>
+        <a class="nav-link" role="tab" aria-controls="pills-contact" aria-selected="false" routerLink="add-skills">Manage Skill</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" role="tab" aria-controls="pills-contact" aria-selected="false" routerLink="view-report">View Report</a>
+        <a class="nav-link" role="tab" aria-controls="pills-contact" aria-selected="false" (click)="signOut()">SignOut</a>
       </li>
+
     </ul>
   </div>
 </nav>

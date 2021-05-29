@@ -26,15 +26,20 @@ public class EmployeeService {
         skillRepository.deleteById(id);
     }
 
-    public boolean saveOrUpdate(SkillDTO skillDTO){
-        Skill skill = new Skill();
-        try{
+    public List<SkillDTO> saveOrUpdate(SkillDTO skillDTO) throws Exception{
+        System.out.println(skillDTO.getId());
+        if(skillDTO.getId()>0){
+            Skill skill = skillRepository.findById(skillDTO.getId()).orElseThrow(()-> new Exception("Not Found"));
             skill.setSkills(skillDTO.getSkills());
             skillRepository.save(skill);
-            return true;
-        }catch (Exception e){
-            return false;
+            return mapToDTO(skillRepository.findAll());
+        }else{
+            Skill skill = new Skill();
+            skill.setSkills(skillDTO.getSkills());
+            skillRepository.save(skill);
+            return null;
         }
+
     }
 
     public List<SkillDTO> mapToDTO(List<Skill> skills){

@@ -4,6 +4,8 @@ import {Employee} from '../Model/employee';
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import {Route, Router} from '@angular/router';
+import {Skill} from '../Model/Skill';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 
@@ -17,11 +19,18 @@ export class ViewEmployeeComponent implements OnInit {
   employees: Employee[];
   edit = false;
   employee: Employee;
+  mapSkill = new Map();
+  skills: Skill[];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) {
+    // tslint:disable-next-line:triple-equals
+    if ( localStorage.getItem('isLogin') == 'false' || localStorage.getItem('isLogin') == null){
+      this.router.navigate(['login']); }
+  }
 
   ngOnInit(): void {
     this.getAllEmployee();
+    this.getAllSkills();
   }
   // tslint:disable-next-line:typedef
   public getAllEmployee(){
@@ -132,5 +141,19 @@ export class ViewEmployeeComponent implements OnInit {
   backToView($event: any) {
     this.edit = false;
     this.ngOnInit();
+  }
+
+  // tslint:disable-next-line:typedef
+  public getAllSkills(){
+    this.apiService.getAllSkills().subscribe(
+      res => {
+        this.skills = res;
+        for (const sk of this.skills) {
+          this.mapSkill.set(sk.id, sk.skills);
+        }
+      }, error => {
+        alert('Error showing skills');
+      }
+    );
   }
 }

@@ -32,8 +32,14 @@ public class EmployeeController {
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping(value = "", method = RequestMethod.PUT)
+    private List<SkillDTO> update(@RequestBody SkillDTO skillDTO) throws Exception {
+        return employeeService.saveOrUpdate(skillDTO);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "", method = RequestMethod.POST)
-    private boolean saveOrUpdate(@RequestBody SkillDTO skillDTO){
+    private List<SkillDTO> save(@RequestBody SkillDTO skillDTO) throws Exception {
         return employeeService.saveOrUpdate(skillDTO);
     }
 }

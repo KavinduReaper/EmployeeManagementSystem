@@ -10,7 +10,7 @@
     </div>
     <button type="submit" class="btn btn-primary" *ngIf="!edit" (click)="sendAddSkill()" [disabled]="skillForm.invalid">Add</button>
     <button type="submit" class="btn btn-danger"  *ngIf="edit" (click)="cancel()" [disabled]="skillForm.invalid">Cancel</button>
-    <button type="submit" class="btn btn-success" *ngIf="edit" (click)="onUpdate()" [disabled]="skillForm.invalid">Update</button>
+    <button type="submit" class="btn btn-success update" *ngIf="edit" (click)="onUpdate()" [disabled]="skillForm.invalid">Update</button>
   </form>
   <div class="skillListHeader">
     <h1 class="skillTable">List of Skills</h1>

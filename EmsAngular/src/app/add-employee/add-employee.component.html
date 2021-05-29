@@ -21,6 +21,57 @@
         <div *ngIf="employeeForm.controls.email.errors?.required">Email is required</div>
       </div>
     </div>
+
+
+    <div class="form-row skillSelect">
+      <div class="col-md-4 mb-3">
+        <div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select Skills
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+              <div *ngFor="let skill of skills">
+                <a class="dropdown-item" (click)="addSkills(skill)">{{skill.skills}}</a>
+              </div>
+            </div>
+
+          </div>
+          <br><br>
+          <div class="form-row">
+            <h5 >Selected Skills</h5>
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">Skills
+
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let skill of selectedSkills; index as i;">
+                <!-- <th scope="row">{{i+1}}</th> -->
+                <td>{{skill.skills}}</td>
+                <td>
+                  <button type="button" class="btn btn-warning" (click)="deleteSkills(skill)">Delete</button>
+                </td>
+
+
+              </tr>
+
+              </tbody>
+            </table>
+
+
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
     <button class="btn btn-success" [disabled]="!employeeForm.valid" *ngIf="!edit" (click)="sendAdd()">Save</button>
     <button class="btn btn-success" [disabled]="!employeeForm.valid" *ngIf="edit" (click)="onUpdate()">Update</button>
     <button class="btn btn-danger" *ngIf="edit" (click)="cancel()">Cancel</button>

@@ -3,7 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Skill} from '../Model/Skill';
 import {ApiService} from '../Service/api.service';
 import {Router} from '@angular/router';
-import {Employee} from "../Model/employee";
+import {Employee} from '../Model/employee';
 
 @Component({
   selector: 'app-add-skills',
@@ -23,8 +23,13 @@ export class AddSkillsComponent implements OnInit {
     skills: new FormControl('', Validators.required)
   });
 
-  constructor(private  apiService: ApiService, private router: Router) { }
-
+  constructor(private  apiService: ApiService, private router: Router) {
+    // tslint:disable-next-line:triple-equals
+    if ( localStorage.getItem('isLogin') == 'false' || localStorage.getItem('isLogin') == null) {
+      this.router.navigate(['login']);
+    }
+  }
+  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.getAllSkills();
     if (this.skill != null){
@@ -61,11 +66,13 @@ export class AddSkillsComponent implements OnInit {
   }
 
   onUpdate(): void{
-    this.model1.id = this.skillForm.value.id;
+    this.model1.id = this.skill.id;
     this.model1.skills = this.skillForm.value.skills;
     this.apiService.updateSkill(this.model1).subscribe(
       res => {
         this.edit = false;
+        this.allSkills = res;
+        this.skillForm.controls.skills.setValue('');
       },
       err => {
         alert('An error occurred in Updating Skill');
@@ -77,8 +84,9 @@ export class AddSkillsComponent implements OnInit {
     this.edit = false;
     this.skillForm.reset();
   }
-
+  // tslint:disable-next-line:typedef
   editSkill(skill: Skill) {
+    this.skillForm.controls.skills.setValue(skill.skills);
     this.skill = skill;
     this.edit = true;
   }
@@ -88,7 +96,7 @@ export class AddSkillsComponent implements OnInit {
       this.model.skills = this.skillForm.value.skills;
       console.log(this.model);
 
-      this.apiService.postSkill(this.model).subscribe(
+      this.apiService.saveSkill(this.model).subscribe(
         res => {
           location.reload();
         }, error => {
