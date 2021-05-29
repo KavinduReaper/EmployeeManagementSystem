@@ -126,6 +126,7 @@ export class ViewEmployeeComponent implements OnInit {
     this.apiService.deleteEmployee(id).subscribe(
       res => {
         if (res){
+          location.reload();
           alert('Delete Successfully');
         }else{
           alert('Error in Delete');
@@ -135,7 +136,6 @@ export class ViewEmployeeComponent implements OnInit {
       }
     );
   }
-
 
   // tslint:disable-next-line:typedef
   backToView($event: any) {
