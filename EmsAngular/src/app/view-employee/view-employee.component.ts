@@ -81,6 +81,9 @@ export class ViewEmployeeComponent implements OnInit {
   getExperienceObject(employees: Employee[]) {
     const exs = [];
     employees.forEach(employee => {
+      const uniqeSkill = [];
+      uniqeSkill.push('Skills:');
+      uniqeSkill.push(this.createSkillobject(employee, this.skills));
       exs.push(
         [{
           columns: [
@@ -93,7 +96,9 @@ export class ViewEmployeeComponent implements OnInit {
               },
               {
                 text: employee.id,
-              }]
+              },
+                uniqeSkill
+            ]
           ]
         }]
       );
@@ -108,7 +113,48 @@ export class ViewEmployeeComponent implements OnInit {
       }
     };
   }
+  // tslint:disable-next-line:typedef
+  createSkillobject(employee, skills: Skill[]){
+    const uniqeSk = [];
+    for (const sk of employee.skills) {
+      uniqeSk.push(this.mapSkill.get(sk));
+      // console.log(this.mapSkill.set(sk.id, sk.skills));
+    }
+    console.log(uniqeSk);
+    // console.log(employee.skills);
+    return uniqeSk;
+  }
 
+  // tslint:disable-next-line:typedef
+  getSkillsObject(skills: Skill[]) {
+    const test = [];
+    for (const sk of this.skills) {
+      this.mapSkill.set(sk.id, sk.skills)
+    }
+    test.push(this.mapSkill.get(1));
+    const exs = [];
+    skills.forEach(skill => {
+      exs.push(
+        [{
+          columns: [
+            [{
+              text: this.mapSkill.get(this.employee),
+            }
+            ]
+          ]
+        }]
+      );
+    });
+
+    return {
+      table: {
+        widths: ['*'],
+        body: [
+          ...exs
+        ]
+      }
+    };
+  }
 
   // tslint:disable-next-line:typedef
   generatePdf(){
