@@ -92,6 +92,9 @@ export class ViewEmployeeComponent implements OnInit {
               style: 'jobTitle'
             },
               {
+                text: employee.email,
+              },
+              {
                 text: employee.dob,
               },
               {
